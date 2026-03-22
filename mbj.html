@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>THEMOVIES — Michael B. Jordan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Lora:ital,wght@0,400;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:      #14181c;
+      --surface: #1f2b38;
+      --border:  rgba(255,255,255,0.08);
+      --accent:  #00e054;
+      --muted:   rgba(255,255,255,0.4);
+      --text:    #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; }
+
+    nav {
+      background: #0f1215;
+      border-bottom: 1px solid var(--border);
+      top: 0; z-index: 100;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+      height: 56px; display: flex; align-items: center;
+    }
+    .logo { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.03em; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--accent); }
+
+    .hero-banner {
+      background: #1a2030;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .actor-avatar {
+      width: 120px; height: 120px; border-radius: 50%;
+      border: 1px solid var(--border);
+      overflow: hidden; flex-shrink: 0;
+      background: var(--surface);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; font-weight: 800; color: var(--accent);
+    }
+    .actor-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.85rem; display: flex; align-items: center; gap: 0.6rem;
+    }
+
+    .film-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 4px;
+      padding: 0.85rem 1rem; display: flex; align-items: flex-start; gap: 1rem;
+      transition: border-color 0.2s;
+    }
+    .film-card.linked { text-decoration: none; display: flex; }
+    .film-year { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--accent); min-width: 36px; padding-top: 2px; }
+    .film-title { font-weight: 700; font-size: 0.9rem; color: var(--text); }
+    .film-role { font-family: 'Lora', serif; font-style: italic; font-size: 0.75rem; color: var(--muted); margin-top: 0.15rem; }
+
+    .detail-row { display: flex; gap: 1rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border); }
+    .detail-row:last-child { border-bottom: none; }
+    .detail-key { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); min-width: 120px; }
+    .detail-val { font-size: 0.85rem; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">THE<span>MOVIES</span></a>
+    </div>
+  </nav>
+
+  <div class="hero-banner">
+    <div style="max-width:1200px;margin:0 auto;padding:2.5rem 1.5rem;">
+
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--muted);letter-spacing:0.06em;margin-bottom:1.5rem;">
+        People / Actors / <span style="color:var(--accent);">Michael B. Jordan</span>
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-6" style="align-items:flex-end;">
+
+        <div class="actor-avatar mx-auto sm:mx-0">
+          <img src="img/mbj.jpg" alt="Michael B. Jordan"
+               onerror="this.style.display='none';this.parentElement.innerHTML='MBJ';" />
+        </div>
+
+        <div>
+          <h1 style="font-size:clamp(1.9rem,5vw,3rem);font-weight:800;letter-spacing:-0.04em;line-height:1;">Michael B. Jordan</h1>
+          <p style="font-family:'Lora',serif;font-style:italic;color:var(--muted);font-size:0.88rem;margin-top:0.4rem;">
+            Actor · Producer · Director
+          </p>
+          <p style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--muted);margin-top:0.6rem;letter-spacing:0.04em;">
+            b. Feb 9, 1987 &nbsp;·&nbsp; Newark, NJ &nbsp;·&nbsp; Academy Award Winner
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div style="max-width:1200px;margin:0 auto;padding:2.5rem 1.5rem;">
+    <div class="flex flex-col lg:flex-row gap-10">
+
+      <div style="flex:1;min-width:0;" class="space-y-10">
+
+        <section>
+          <p class="section-label">Biography</p>
+          <p style="font-family:'Lora',serif;font-size:0.97rem;line-height:1.85;color:rgba(255,255,255,0.75);max-width:75ch;">
+            Michael Bakari Jordan was born in Santa Ana, California, and raised in Newark, New Jersey. He began his acting career as a child, making his television debut before landing a breakthrough role as Wallace in HBO's <em>The Wire</em> (2002). His performance as Oscar Grant in <em>Fruitvale Station</em> (2013) established him as a dramatic force, earning widespread critical acclaim. He rose to global fame as Erik Killmonger in <em>Black Panther</em> (2018) and solidified his leading-man status with the <em>Creed</em> trilogy. In 2025, his dual performance in Ryan Coogler's <em>Sinners</em> earned him the Academy Award for Best Actor.
+          </p>
+        </section>
+
+        <section>
+          <p class="section-label">Selected Filmography</p>
+          <div class="space-y-2">
+
+            <a href="index.html" class="film-card linked">
+              <span class="film-year">2025</span>
+              <div>
+                <p class="film-title">Sinners</p>
+                <p class="film-role">Smoke &amp; Stack (Dual Role)</p>
+              </div>
+            </a>
+
+            <div class="film-card">
+              <span class="film-year">2023</span>
+              <div>
+                <p class="film-title">Creed III</p>
+                <p class="film-role">Adonis Creed · Also Directed</p>
+              </div>
+            </div>
+
+            <div class="film-card">
+              <span class="film-year">2022</span>
+              <div>
+                <p class="film-title">Black Panther: Wakanda Forever</p>
+                <p class="film-role">Erik Killmonger (cameo)</p>
+              </div>
+            </div>
+
+            <div class="film-card">
+              <span class="film-year">2018</span>
+              <div>
+                <p class="film-title">Black Panther</p>
+                <p class="film-role">Erik Killmonger</p>
+              </div>
+            </div>
+
+            <div class="film-card">
+              <span class="film-year">2015</span>
+              <div>
+                <p class="film-title">Creed</p>
+                <p class="film-role">Adonis Creed</p>
+              </div>
+            </div>
+
+            <div class="film-card">
+              <span class="film-year">2013</span>
+              <div>
+                <p class="film-title">Fruitvale Station</p>
+                <p class="film-role">Oscar Grant</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+
+      <div style="width:100%;max-width:260px;flex-shrink:0;">
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:1rem;">
+          <p class="section-label" style="margin-bottom:0.6rem;">Personal Info</p>
+          <div class="detail-row"><span class="detail-key">Born</span><span class="detail-val">Feb 9, 1987</span></div>
+          <div class="detail-row"><span class="detail-key">Birthplace</span><span class="detail-val">Santa Ana, CA</span></div>
+          <div class="detail-row"><span class="detail-key">Raised in</span><span class="detail-val">Newark, NJ</span></div>
+          <div class="detail-row"><span class="detail-key">Nationality</span><span class="detail-val">American</span></div>
+          <div class="detail-row"><span class="detail-key">Active Since</span><span class="detail-val">2001</span></div>
+          <div class="detail-row"><span class="detail-key">Also Known As</span><span class="detail-val">MBJ</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer style="border-top:1px solid var(--border);margin-top:3rem;padding:1.5rem;text-align:center;">
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;">
+      CineVault © 2025 · All film data for informational purposes only
+    </p>
+  </footer>
+
+</body>
+</html>

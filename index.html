@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>THEMOVIES — Sinners</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Lora:ital,wght@0,400;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:      #14181c;
+      --surface: #1f2b38;
+      --border:  rgba(255,255,255,0.08);
+      --accent:  #00e054;
+      --muted:   rgba(255,255,255,0.4);
+      --text:    #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; }
+
+    /* NAV */
+    nav {
+      background: #0f1215;
+      border-bottom: 1px solid var(--border); top: 0; z-index: 100;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+      height: 56px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.03em; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--accent); }
+
+    .hero-banner {
+      background: #1a2030;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .poster {
+      width: 100%; aspect-ratio: 2/3; min-height: 260px; 
+      overflow: hidden; flex-shrink: 0; background: var(--surface);
+    }
+    .poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .score-ring { position: relative; display: inline-flex; align-items: center; justify-content: center; }
+    .score-ring svg { transform: rotate(-90deg); }
+    .score-ring .inner { position: absolute; font-family: 'Syne', sans-serif; font-weight: 700; }
+
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.85rem; display: flex; align-items: center; gap: 0.6rem;
+    }
+
+    .cast-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 4px;
+      padding: 0.85rem 1rem; transition: border-color 0.2s;
+    }
+    .cast-card.linked { cursor: pointer; }
+    .cast-badge { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.3rem; }
+    .cast-name { font-weight: 700; font-size: 0.9rem; }
+    .cast-name-link { font-weight: 700; font-size: 0.9rem; color: var(--accent); display: flex; align-items: center; gap: 0.35rem; }
+    .cast-role { font-size: 0.78rem; color: var(--muted); margin-top: 0.2rem; font-family: 'Lora', serif; font-style: italic; }
+
+    .detail-row { display: flex; gap: 1rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border); }
+    .detail-row:last-child { border-bottom: none; }
+    .detail-key { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); min-width: 120px; }
+    .detail-val { font-size: 0.85rem; font-weight: 600; }
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="logo">THE<span>MOVIES</span></a>
+    </div>
+  </nav>
+
+  <div class="hero-banner">
+    <div style="max-width:1200px;margin:0 auto;padding:2.5rem 1.5rem;">
+
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--muted);letter-spacing:0.06em;margin-bottom:1.5rem;">
+        Movies / Horror / <span style="color:var(--accent);">Sinners</span>
+      </p>
+
+      <div class="flex flex-col md:flex-row gap-8" style="align-items:flex-start;">
+
+        <div style="width:100%;max-width:185px;flex-shrink:0;" class="mx-auto md:mx-0">
+          <div class="poster">
+            <img src="img/sinners.jpg" alt="Sinners Movie Poster"
+                 onerror="this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.style.display='none';" />
+          </div>
+        </div>
+
+        <div style="flex:1;min-width:0;">
+
+          <h1 style="font-size:clamp(1.9rem,5vw,3rem);font-weight:800;letter-spacing:-0.04em;line-height:1;">Sinners</h1>
+
+          <p style="font-family:'Lora',serif;font-style:italic;color:var(--muted);font-size:0.88rem;margin-top:0.4rem;">
+            Directed by Ryan Coogler
+          </p>
+
+          <p style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--muted);margin-top:0.6rem;letter-spacing:0.04em;">
+            2025 &nbsp;·&nbsp; R &nbsp;·&nbsp; 138 min &nbsp;·&nbsp; Southern Gothic · Horror · Musical · Period Drama
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1200px;margin:0 auto;padding:2.5rem 1.5rem;">
+    <div class="space-y-10">
+
+      <section>
+        <p class="section-label">Synopsis</p>
+        <p style="font-family:'Lora',serif;font-size:0.97rem;line-height:1.85;color:rgba(255,255,255,0.75);max-width:80ch;">
+          Mississippi Delta, 1932. Twin brothers <strong style="color:var(--text);">Smoke</strong> and <strong style="color:var(--text);">Stack</strong> — veterans turned bootleggers — return to their hometown hoping to leave their troubled pasts behind. They open a juke joint, a haven for blues music and Black community. But when a coven of vampires, drawn by the otherworldly talent of a young blues prodigy named Sammie, descends on their celebration, the brothers face an evil that threatens not just their lives — but the very soul of a generation.
+        </p>
+      </section>
+
+      <section>
+        <p class="section-label">Main Cast</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+
+          <a href="mbj.html" class="cast-card linked">
+            <p class="cast-badge">Lead</p>
+            <p class="cast-name">Michael B. Jordan</p>
+            <p class="cast-role">Smoke &amp; Stack (Dual Role)</p>
+          </a>
+
+          <div class="cast-card">
+            <p class="cast-badge">Supporting</p>
+            <p class="cast-name">Hailee Steinfeld</p>
+            <p class="cast-role">Mary</p>
+          </div>
+
+          <div class="cast-card">
+            <p class="cast-badge">Supporting</p>
+            <p class="cast-name">Jack O'Connell</p>
+            <p class="cast-role">Remmick</p>
+          </div>
+
+          <div class="cast-card">
+            <p class="cast-badge">Supporting</p>
+            <p class="cast-name">Wunmi Mosaku</p>
+            <p class="cast-role">Annie</p>
+          </div>
+
+          <div class="cast-card">
+            <p class="cast-badge">Supporting</p>
+            <p class="cast-name">Miles Caton</p>
+            <p class="cast-role">Sammie — Film Debut</p>
+          </div>
+
+          <div class="cast-card">
+            <p class="cast-badge">Supporting</p>
+            <p class="cast-name">Delroy Lindo</p>
+            <p class="cast-role">Delta Slim</p>
+          </div>
+
+          <div class="cast-card">
+            <p class="cast-badge">Supporting</p>
+            <p class="cast-name">Jayme Lawson</p>
+            <p class="cast-role">Pearline</p>
+          </div>
+
+          <div class="cast-card">
+            <p class="cast-badge">Supporting</p>
+            <p class="cast-name">Omar Benson Miller</p>
+            <p class="cast-role">Cornbread</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Film Details -->
+      <section>
+        <p class="section-label">Film Details</p>
+        <div style="max-width:560px;">
+          <div class="detail-row"><span class="detail-key">Director</span><span class="detail-val">Ryan Coogler</span></div>
+          <div class="detail-row"><span class="detail-key">Screenplay</span><span class="detail-val">Ryan Coogler</span></div>
+          <div class="detail-row"><span class="detail-key">Composer</span><span class="detail-val">Ludwig Göransson</span></div>
+          <div class="detail-row"><span class="detail-key">Cinematographer</span><span class="detail-val">Autumn Durald Arkapaw</span></div>
+          <div class="detail-row"><span class="detail-key">Editor</span><span class="detail-val">Michael P. Shawver</span></div>
+          <div class="detail-row"><span class="detail-key">Studio</span><span class="detail-val">Warner Bros. Pictures</span></div>
+          <div class="detail-row"><span class="detail-key">Budget</span><span class="detail-val">$90 – 100M</span></div>
+          <div class="detail-row"><span class="detail-key">Box Office</span><span class="detail-val">$370M+ worldwide</span></div>
+          <div class="detail-row"><span class="detail-key">Runtime</span><span class="detail-val">138 minutes</span></div>
+          <div class="detail-row"><span class="detail-key">Release</span><span class="detail-val">April 18, 2025 · IMAX &amp; 70mm</span></div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid var(--border);margin-top:3rem;padding:1.5rem;text-align:center;">
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:0.65rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;">
+      PROYECTO DE EJEMPLO PARA LA MATERIA Programación Web 
+    </p>
+    <p><a href="">Repo de GitHub </a></p>
+  </footer>
+
+</body>
+</html>
